@@ -8,11 +8,16 @@ Author: James Dean
 use serde::{Deserialize, Serialize};
 use std::fs;
 
+pub const VERSION: &str = "0.1.0";
+
 // This struct defines the configuration structure
 #[derive(Serialize, Deserialize)]
 pub struct Config {
+    pub node_id: String,
     pub blockchain_id: String,
     pub port: u16,
+    pub external_address: String,
+    pub db_connection: String
     // Add other configuration fields as needed
 }
 

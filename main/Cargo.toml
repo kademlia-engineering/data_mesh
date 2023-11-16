@@ -10,4 +10,8 @@ authors = ["James Dean"]
 tokio = { version = "1", features = ["full"] }
 
 server = { path = "../server" }
-config = { path = "../config" }
+
+config = { path = "../common/config" }
+
+logging = { path = "../common/logging" }
+log = "0.4"

@@ -1,4 +1,7 @@
 {
+    "node_id": "",
     "blockchain_id": "",
-    "port": 8080
+    "port": 8080,
+    "external_address": "127.0.0.1:8081",
+    "db_connection":""
 }

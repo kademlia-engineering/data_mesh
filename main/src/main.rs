@@ -7,11 +7,18 @@ Author: James Dean
 */
 use server::run_server;
 use config::load_config;
+use logging;
 
 #[tokio::main]
 async fn main() {
+    // Initialize logging
+    logging::init();
+
+    // Load configuration
     let config = load_config("../config.json")
         .expect("Failed to load config");
 
+    // Start the web server
+    log::info!("Starting server on port: {}", config.port);
     run_server(config.port).await;
 }

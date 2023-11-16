@@ -1,5 +1,5 @@
 [package]
-name = "server"
+name = "models"
 version = "0.1.0"
 edition = "2021"
 authors = ["James Dean"]
@@ -7,8 +7,5 @@ authors = ["James Dean"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-hyper = { version = "0.14", features = ["full"] }
-tokio = { version = "1", features = ["full"] }
-log = "0.4"
-
-request_handlers = { path = "../request_handlers" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"

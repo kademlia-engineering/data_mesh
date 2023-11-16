@@ -5,18 +5,22 @@ Description: This crate defines the web server class using tokio and hyper
 
 Author: James Dean
 */
-use hyper::{Body, Request, Response, Server, StatusCode};
+use hyper::{Method, Body, Request, Response, Server, StatusCode};
 use hyper::service::{make_service_fn, service_fn};
 use std::convert::Infallible;
 use std::net::SocketAddr;
+
+use request_handlers;
 
 // This method defines the rest api routes exposed by the codebase
 // Params: HTTP Request
 // Returns: HTTP Response
 async fn handle_request(req: Request<Body>) -> Result<Response<Body>, Infallible> {
-    match req.uri().path() {
-        "/" => Ok(Response::new(Body::from("Welcome to the Rust Hyper Server!"))),
-        "/hello" => Ok(Response::new(Body::from("Hello, World!"))),
+    log::info!("Request: {:?} {} {}", req.version(), req.method().to_string(), req.uri().to_string());
+    match (req.method(), req.uri().path()) {
+        (&Method::GET, "/") => Ok(request_handlers::get_version()),
+        (&Method::GET, "/transaction") => Ok(request_handlers::query_transaction(req)),
+        (&Method::POST, "/transaction") => Ok(request_handlers::create_transaction(req)),
         _ => {
             let mut not_found = Response::default();
             *not_found.status_mut() = StatusCode::NOT_FOUND;
