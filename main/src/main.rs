@@ -9,13 +9,15 @@ use server::run_server;
 use config::load_config;
 use logging;
 
+const CONFIG_FILEPATH: &str = "../config.json";
+
 #[tokio::main]
 async fn main() {
     // Initialize logging
     logging::init();
 
     // Load configuration
-    let config = load_config("../config.json")
+    let config = load_config(CONFIG_FILEPATH)
         .expect("Failed to load config");
 
     // Start the web server

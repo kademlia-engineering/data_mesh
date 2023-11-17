@@ -19,7 +19,7 @@ pub struct Transaction {
 
 #[derive(Serialize, Deserialize)]
 pub struct Block {
-    id: String
+    id: String,
     blockchain_id: String,
     timestamp: i64,
     transactions: Vec<Transaction>,
