@@ -9,7 +9,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
 pub struct Transaction {
-    id: String,
+    hash: String,
     blockchain_id: String,
     timestamp: String,
     owner: String,
@@ -19,7 +19,7 @@ pub struct Transaction {
 
 #[derive(Serialize, Deserialize)]
 pub struct Block {
-    id: String,
+    hash: String,
     blockchain_id: String,
     timestamp: i64,
     transactions: Vec<Transaction>,
@@ -35,7 +35,5 @@ pub struct Node {
     id: String,
     blockchain_id: String,
     address: String,
-    status: String,
-    block_count: String,
-    transaction_count: String
+    timestamp: String
 }

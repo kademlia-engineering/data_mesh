@@ -3,5 +3,5 @@
     "blockchain_id": "",
     "port": 8080,
     "external_address": "127.0.0.1:8081",
-    "db_connection":""
+    "db_connection":"<IMMU_DB>"
 }
