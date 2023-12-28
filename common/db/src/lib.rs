@@ -1,7 +1,10 @@
-// Add the necessary dependencies in your Cargo.toml
-// [dependencies]
-// immudb = "0.1" // Use the latest version
+/*
+Last updated: 12-27-2023
 
+Description: This crate is used to interface with immudb
+
+Author: James Dean
+*/
 use immudb::ImmudbClient;
 use serde::{Serialize, Deserialize};
 use std::collections::HashMap;

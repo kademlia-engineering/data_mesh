@@ -1,7 +1,7 @@
 /*
 Last updated: 11-15-2023
 
-Description: This crate defines the main thread of the blockchain node
+Description: This crate defines the main thread of the data mesh node
 
 Author: James Dean
 */
